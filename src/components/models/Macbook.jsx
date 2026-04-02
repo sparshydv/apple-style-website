@@ -14,8 +14,9 @@ import useMacbookStore from "../../store/index.js";
 import {noChangeParts} from "../../constants/index.js";
 import {Color} from "three";
 
-export default function MacbookModel(props) {
-    const { color, texture, } = useMacbookStore();
+export default function MacbookModel({ color: customColor, ...props }) {
+    const { color: storeColor, texture } = useMacbookStore();
+    const activeColor = customColor || storeColor;
   const { nodes, materials, scene} = useGLTF('/models/macbook-transformed.glb')
 
     const screen = useVideoTexture(texture)
@@ -24,11 +25,11 @@ export default function MacbookModel(props) {
         scene.traverse((child) => {
             if (child.isMesh) {
                 if (!noChangeParts.includes(child.name)) {
-                    child.material.color = new Color(color);
+                    child.material.color = new Color(activeColor);
                 }
             }
         });
-    }, [color, scene]);
+    }, [activeColor, scene]);
 
   return (
     <group {...props} dispose={null}>
