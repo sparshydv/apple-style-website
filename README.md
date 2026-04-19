@@ -1,70 +1,93 @@
-# 💻 MacBook Pro Landing Page
+# MacBook Landing Page (GSAP + React + Three.js)
 
-A high-performance, visually stunning 3D landing page inspired by Apple's design language. This project features interactive 3D models, smooth scroll-driven animations, and a premium user interface.
+An interactive MacBook-style product landing page built with React, GSAP, and React Three Fiber.  
+It combines cinematic scroll animation, 3D model rendering, feature videos, and responsive layouts.
 
-## ✨ Features
+## Features
 
-- **3D Product Interaction**: Explore the MacBook Pro using an interactive 3D model with realistic lighting and controls.
-- **Dynamic Color & Size Picking**: Real-time updates to the 3D model's color and size based on user selection.
-- **GSAP Scroll Animations**: High-performance, scroll-triggered animations for a cinematic storytelling experience.
-- **Video Feature Reveals**: Content reveals synced with video textures for immersive feature explanation.
-- **Responsive Design**: Fully optimized for various screen sizes, from mobile to ultra-wide desktops.
-- **Fast Performance**: Built with Vite for near-instant development feedback and optimized production builds.
+- Interactive 3D MacBook viewer with model variants
+- Scroll-driven section transitions powered by GSAP + ScrollTrigger
+- Video-led storytelling for hero and feature highlights
+- Responsive UI for mobile and desktop
+- Zustand-based state management for model/view interactions
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- **Framework**: [React](https://reactjs.org/)
-- **Animation**: [GSAP (GreenSock)](https://gsap.com/) & [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
-- **3D Graphics**: [Three.js](https://threejs.org/) & [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Build Tool**: [Vite](https://vitejs.dev/)
+- React 19
+- Vite 7
+- GSAP + @gsap/react
+- Three.js + @react-three/fiber + @react-three/drei
+- Tailwind CSS 4
+- Zustand
+- ESLint 9
 
-## 🚀 Getting Started
+## Prerequisites
 
-### Prerequisites
+- Node.js 18+
+- npm 9+
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+## Local Development
 
-### Installation
+1. Install dependencies:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/macbook-pro-landing.git
-   cd macbook-pro-landing
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-
-## 📂 Project Structure
-
-```text
-src/
-├── components/      # React components (3D Viewer, Features, etc.)
-├── constants/       # Static content and data definitions
-├── store/           # Zustand state management
-├── index.css        # Global styles and Tailwind directives
-└── App.jsx          # Main application entry point
+```bash
+npm install
 ```
 
-## 👨‍💻 Credits
+2. Start development server:
 
-Original project structure and assets inspired by the [JavaScript Mastery](https://www.youtube.com/@javascriptmastery) tutorial.
+```bash
+npm run dev
+```
 
----
+3. Open the local URL printed by Vite (usually http://localhost:5173).
 
-Built with ❤️ by Sparsh Yadav
+## Available Scripts
+
+```bash
+npm run dev      # Start Vite dev server
+npm run build    # Create production build
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+```
+
+## Project Structure
+
+```text
+.
+|- public/
+|  |- fonts/
+|  |- models/
+|  |- videos/
+|- src/
+|  |- components/
+|  |  |- models/
+|  |  |- three/
+|  |- constants/
+|  |- store/
+|  |- App.jsx
+|  |- index.css
+|  |- main.jsx
+|- index.html
+|- package.json
+|- vite.config.js
+```
+
+## Customization Notes
+
+- Update section content and labels in `src/constants/index.js`.
+- Main page composition is defined in `src/App.jsx`.
+- Replace media in `public/videos` and `public/models` to reskin the experience.
+- Adjust global styling and utility layers in `src/index.css`.
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The optimized output is generated in the `dist` folder.
+
+## Credits
+
+Inspired by Apple-style product storytelling and modern 3D web interfaces.
